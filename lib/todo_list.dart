@@ -29,8 +29,8 @@ class _TodoListState extends State<TodoList> {
     );
   }
 
-  _addTodo() {
-    showDialog<Todo>(
+  _addTodo() async {
+    final todo = await showDialog<Todo>(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
