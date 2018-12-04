@@ -7,6 +7,8 @@ class TodoList extends StatefulWidget {
 }
 
 class _TodoListState extends State<TodoList> {
+  List<Todo> todos = [];
+
   @override
   Widget build(BuildContext context) {
     return Container();
