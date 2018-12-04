@@ -34,6 +34,14 @@ class _TodoListState extends State<TodoList> {
         return AlertDialog(
           title: Text('New todo'),
           content: TextField(),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('Cancel'),
+            ),
+            FlatButton(
+              child: Text('Add'),
+            ),
+          ],
         );
       },
     );
