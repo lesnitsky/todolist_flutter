@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:todo_list/todo.dart';
+
 class TodoList extends StatelessWidget {
   _toggleTodo(Todo todo, bool isChecked) {
     setState(() {
