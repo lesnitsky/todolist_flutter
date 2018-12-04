@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Todo List',
       home: Scaffold(
         appBar: AppBar(title: Text('Todo List')),
+        body: TodoList(),
       ),
     );
   }
