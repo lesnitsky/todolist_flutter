@@ -46,8 +46,14 @@ class _TodoListState extends State<TodoList> {
             FlatButton(
               child: Text('Add'),
               onPressed: () {
-                print(controller.value.text);
-                controller.clear();
+                setState(() {
+                  final todo = new Todo(title: controller.value.text);
+
+                  todos.add(todo);
+                  controller.clear();
+
+                  Navigator.of(context).pop();
+                });
               },
             ),
           ],
