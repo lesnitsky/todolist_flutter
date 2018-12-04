@@ -3,12 +3,12 @@ import 'package:todo_list/todo.dart';
 
 import 'package:todo_list/new_todo_dialog.dart';
 
-class TodoList extends StatefulWidget {
+class TodoListScreen extends StatefulWidget {
   @override
-  _TodoListState createState() => _TodoListState();
+  _TodoListScreenState createState() => _TodoListScreenState();
 }
 
-class _TodoListState extends State<TodoList> {
+class _TodoListScreenState extends State<TodoListScreen> {
   List<Todo> todos = [];
 
   _toggleTodo(Todo todo, bool isChecked) {
