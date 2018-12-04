@@ -13,16 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Todo List',
-      home: Scaffold(
-        appBar: AppBar(title: Text('Todo List')),
-        body: TodoList(),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            // 😢
-          },
-        ),
-      ),
+      home: TodoList(),
     );
   }
 }

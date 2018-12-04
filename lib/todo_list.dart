@@ -27,11 +27,20 @@ class _TodoListState extends State<TodoList> {
     );
   }
 
+  _addTodo() {}
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemBuilder: _buildItem,
-      itemCount: todos.length,
+    return Scaffold(
+      appBar: AppBar(title: Text('Todo List')),
+      body: ListView.builder(
+        itemBuilder: _buildItem,
+        itemCount: todos.length,
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: _addTodo,
+      ),
     );
   }
 }
