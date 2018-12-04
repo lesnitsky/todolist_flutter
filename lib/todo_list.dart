@@ -37,6 +37,9 @@ class _TodoListState extends State<TodoList> {
           actions: <Widget>[
             FlatButton(
               child: Text('Cancel'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
             ),
             FlatButton(
               child: Text('Add'),
