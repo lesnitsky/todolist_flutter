@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:todo_list/todo.dart';
 
 class TodoList extends StatelessWidget {
+  TodoList({@required this.todos});
+
+  final List<Todo> todos;
+
   _toggleTodo(Todo todo, bool isChecked) {
     setState(() {
       todo.isDone = isChecked;
