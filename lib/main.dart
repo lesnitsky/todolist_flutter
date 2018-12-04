@@ -5,3 +5,5 @@ void main() {
   SystemChrome.setEnabledSystemUIOverlays([]);
   runApp(MyApp());
 }
+
+class MyApp extends StatelessWidget {}
