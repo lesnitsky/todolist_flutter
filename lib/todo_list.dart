@@ -27,7 +27,16 @@ class _TodoListState extends State<TodoList> {
     );
   }
 
-  _addTodo() {}
+  _addTodo() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('New todo'),
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
