@@ -45,6 +45,10 @@ class _TodoListState extends State<TodoList> {
             ),
             FlatButton(
               child: Text('Add'),
+              onPressed: () {
+                print(controller.value.text);
+                controller.clear();
+              },
             ),
           ],
         );
