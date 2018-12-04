@@ -59,6 +59,12 @@ class _TodoListState extends State<TodoList> {
         );
       },
     );
+
+    if (todo != null) {
+      setState(() {
+        todos.add(todo);
+      });
+    }
   }
 
   @override
