@@ -12,6 +12,12 @@ class TodoListScreen extends StatefulWidget {
 class _TodoListScreenState extends State<TodoListScreen> {
   List<Todo> todos = [];
 
+  _toggleTodo(Todo todo, bool isChecked) {
+    setState(() {
+      todo.isDone = isChecked;
+    });
+  }
+
   _addTodo() async {
     final todo = await showDialog<Todo>(
       context: context,

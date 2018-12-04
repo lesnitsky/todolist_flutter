@@ -7,12 +7,6 @@ class TodoList extends StatelessWidget {
 
   final List<Todo> todos;
 
-  _toggleTodo(Todo todo, bool isChecked) {
-    setState(() {
-      todo.isDone = isChecked;
-    });
-  }
-
   Widget _buildItem(BuildContext context, int index) {
     final todo = todos[index];
 
