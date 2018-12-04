@@ -9,7 +9,12 @@ class TodoList extends StatefulWidget {
 class _TodoListState extends State<TodoList> {
   List<Todo> todos = [];
 
-  _buildItem() {}
+  Widget _buildItem(BuildContext context, int index) {
+    final todo = todos[index];
+
+    return CheckboxListTile(
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
