@@ -35,7 +35,10 @@ class _TodoListState extends State<TodoList> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('New todo'),
-          content: TextField(controller: controller),
+          content: TextField(
+            controller: controller,
+            autofocus: true,
+          ),
           actions: <Widget>[
             FlatButton(
               child: Text('Cancel'),
