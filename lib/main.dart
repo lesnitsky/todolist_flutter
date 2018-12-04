@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Todo List',
       home: Scaffold(
+        appBar: AppBar(title: Text('Todo List')),
       ),
     );
   }
