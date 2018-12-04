@@ -33,6 +33,7 @@ class _TodoListState extends State<TodoList> {
       builder: (BuildContext context) {
         return AlertDialog(
           title: Text('New todo'),
+          content: TextField(),
         );
       },
     );
