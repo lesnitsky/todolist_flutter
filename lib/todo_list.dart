@@ -9,8 +9,13 @@ class TodoList extends StatefulWidget {
 class _TodoListState extends State<TodoList> {
   List<Todo> todos = [];
 
+  _buildItem() {}
+
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ListView.builder(
+      itemBuilder: _buildItem,
+      itemCount: todos.length,
+    );
   }
 }
