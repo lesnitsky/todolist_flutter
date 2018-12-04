@@ -15,6 +15,9 @@ class _TodoListState extends State<TodoList> {
     return CheckboxListTile(
       value: todo.isDone,
       title: Text(todo.title),
+      onChanged: (bool isChecked) {
+        _toggleTodo(todo, isChecked);
+      },
     );
   }
 
