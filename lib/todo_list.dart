@@ -9,6 +9,10 @@ class TodoList extends StatefulWidget {
 class _TodoListState extends State<TodoList> {
   List<Todo> todos = [];
 
+  _toggleTodo(Todo todo, bool isChecked) {
+    todo.isDone = isChecked;
+  }
+
   Widget _buildItem(BuildContext context, int index) {
     final todo = todos[index];
 
