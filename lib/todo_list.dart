@@ -14,9 +14,9 @@ class _TodoListState extends State<TodoList> {
   ];
 
   _toggleTodo(Todo todo, bool isChecked) {
-    print('${todo.title} ${todo.isDone}');
-
-    todo.isDone = isChecked;
+    setState(() {
+      todo.isDone = isChecked;
+    });
   }
 
   Widget _buildItem(BuildContext context, int index) {
