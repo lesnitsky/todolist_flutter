@@ -13,6 +13,7 @@ class _TodoListState extends State<TodoList> {
     final todo = todos[index];
 
     return CheckboxListTile(
+      value: todo.isDone,
     );
   }
 
