@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list/todo.dart';
 
+import 'package:todo_list/new_todo_dialog.dart';
+
 class TodoList extends StatefulWidget {
   @override
   _TodoListState createState() => _TodoListState();
@@ -8,8 +10,6 @@ class TodoList extends StatefulWidget {
 
 class _TodoListState extends State<TodoList> {
   List<Todo> todos = [];
-
-  TextEditingController controller = new TextEditingController();
 
   _toggleTodo(Todo todo, bool isChecked) {
     setState(() {
@@ -33,30 +33,7 @@ class _TodoListState extends State<TodoList> {
     final todo = await showDialog<Todo>(
       context: context,
       builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text('New todo'),
-          content: TextField(
-            controller: controller,
-            autofocus: true,
-          ),
-          actions: <Widget>[
-            FlatButton(
-              child: Text('Cancel'),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            FlatButton(
-              child: Text('Add'),
-              onPressed: () {
-                final todo = new Todo(title: controller.value.text);
-                controller.clear();
-
-                Navigator.of(context).pop(todo);
-              },
-            ),
-          ],
-        );
+        return NewTodoDialog();
       },
     );
 
