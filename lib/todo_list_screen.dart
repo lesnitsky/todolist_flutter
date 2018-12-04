@@ -39,6 +39,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
       appBar: AppBar(title: Text('Todo List')),
       body: TodoList(
         todos: todos,
+        onTodoToggle: _toggleTodo,
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
