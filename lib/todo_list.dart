@@ -30,7 +30,7 @@ class _TodoListState extends State<TodoList> {
   }
 
   _addTodo() {
-    showDialog(
+    showDialog<Todo>(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
@@ -49,14 +49,10 @@ class _TodoListState extends State<TodoList> {
             FlatButton(
               child: Text('Add'),
               onPressed: () {
-                setState(() {
-                  final todo = new Todo(title: controller.value.text);
+                final todo = new Todo(title: controller.value.text);
+                controller.clear();
 
-                  todos.add(todo);
-                  controller.clear();
-
-                  Navigator.of(context).pop();
-                });
+                Navigator.of(context).pop(todo);
               },
             ),
           ],
