@@ -7,11 +7,7 @@ class TodoList extends StatefulWidget {
 }
 
 class _TodoListState extends State<TodoList> {
-  List<Todo> todos = [
-    Todo(title: 'Learn Dart'),
-    Todo(title: 'Try Flutter'),
-    Todo(title: 'Be amazed'),
-  ];
+  List<Todo> todos = [];
 
   _toggleTodo(Todo todo, bool isChecked) {
     setState(() {

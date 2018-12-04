@@ -16,6 +16,9 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: Text('Todo List')),
         body: TodoList(),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+        ),
       ),
     );
   }
