@@ -1160,13 +1160,8 @@ But there is still a lot of work to do:
 
 See you in next tutorials! 👋
 
-### Author
-
-[Andrei Lesnitsky](https://github.com/lesnitsky) [[Twitter](https://twitter.com/lesnitsky_a) | [Email](mailto:andrei.lesnitsky@gmail.com)]
-
 > Built with [Git Tutor](https://github.com/lesnitsky/git-tutor)
 
-## Support me
 
-![GitHub stars](https://img.shields.io/github/stars/lesnitsky/todolist_flutter.svg?style=social)
-![Twitter Follow](https://img.shields.io/twitter/follow/lesnitsky_a.svg?label=Follow%20me&style=social)
+[![GitHub stars](https://img.shields.io/github/stars/lesnitsky/todolist_flutter.svg?style=social)](https://github.com/lesnitsky/todolist_flutter)
+[![Twitter Follow](https://img.shields.io/twitter/follow/lesnitsky_a.svg?label=Follow%20me&style=social)](https://twitter.com/lesnitsky_a)
