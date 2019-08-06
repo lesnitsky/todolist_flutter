@@ -1158,6 +1158,55 @@ But there is still a lot of work to do:
 
 ![App-Screenshot-3.png](https://s3.eu-west-2.amazonaws.com/git-tutor-assets/git-tutor-todolist-3.png)
 
+## More features
+
+Let's add more features to our Todo list app.
+
+Now we will add a line through the text when item is completed. By this way, the user feels more like the task is completed.
+
+📄 lib/todo_list.dart
+
+```diff
+ 
++ _getTextStyle(bool isDone) {}
++ 
+  Widget _buildItem(BuildContext context, int index) {
+  final todo = todos[index];
+    
+    return CheckboxListTile(
+      value: todo.isDone,
+      title: Text(
+        todo.title,
++       style: _getTextStyle(todo.isDone),
+      ),
+      onChanged: (bool isChecked) {
+        onTodoToggle(todo, isChecked);
+      },
+    );
+  }
+```
+
+Our `_getTextStyle()` method will get `bool isDone` as a parameter and will return a `TextStyle` depending wether 
+the task has finished or not.
+
+In case it is finished it will add a line through the text, otherwise, it will return `null`.
+
+
+📄 lib/todo_list.dart
+
+```diff
+ 
+- _getTextStyle(bool isDone) {}
++ TextStyle  _getTextStyle(bool isDone) {
++   if (!isDone) return null;
++
++   return TextStyle(
++       color: Colors.black54, decoration: TextDecoration.lineThrough);
++ }
+
+```
+
+
 See you in next tutorials! 👋
 
 > Built with [Git Tutor](https://github.com/lesnitsky/git-tutor)
