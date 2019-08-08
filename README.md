@@ -1277,6 +1277,148 @@ paste into our `_submitTodo()` method.
   }
 ```
 
+Let's also forbide the user from adding an empty todo. This is pretty straightforward.
+
+📄 lib/new_todo_dialog.dart
+
+```diff
+ 
+  void _submitTodo(BuildContext context, String title) {
++   if (title.isNotEmpty) {  
+      final todo = new Todo(title: title);
+      controller.clear();
+      Navigator.of(context).pop(todo);
++   }
+  }
+
+```
+
+For now, there is no way to remove items. But, this is about to change.
+
+We will wrap our item to a `Dismissible`, this will allow us to implement swip to dismiss.
+
+📄 lib/todo_list.dart
+
+```diff
+ 
++ _buildDismissibleBackground() {}
+
+  Widget _buildItem(BuildContext context, int index) {
+    final todo = todos[index];
+
+-   return CheckboxListTile(
+-     value: todo.isDone,
+-     title: Text(
+-     todo.title,
+-     style: _getTextStyle(context, todo.isDone),
+-     ),
+-     onChanged: (bool isChecked) {
+-       onTodoToggle(todo, isChecked);
+-     },
+-   ); 
++   return Dismissible(
++     key: Key(UniqueKey().toString()),
++     background: _buildDismissibleBackground(),
++     direction: DismissDirection.endToStart,
++     onDismissed: (direction) {
++       // TODO: Remove item
++     },
++     child: CheckboxListTile(
++       value: todo.isDone,
++       title: Text(
++         todo.title,
++         style: _getTextStyle(context, todo.isDone),
++       ),
++       onChanged: (bool isChecked) {
++         onTodoToggle(todo, isChecked);
++       },
++     ),
++   );
+  }
+
+```
+
+Now you can see our item can be dismissed by swiping it from the end to the start. However, nothing will happens yet.
+
+NOTE: `key` value is important to be `Key(Uniquekey().toString())` because it makes each item unique. If you put another value, the items could be messed up when deleted.
+
+`_buildDismissibleBackground()` will be responsible to show a background when the user is swiping the item. Then, we will add a red background with a delete icon.
+
+📄 lib/todo_list.dart
+
+```diff
+ 
+- _buildDismissibleBackground() {}
++ Widget _buildDismissibleBackground() {
++   return Container(
++     alignment: Alignment.centerRight,
++     padding: EdgeInsets.only(right: 20.0),
++     color: Colors.red,
++     child: Icon(
++       Icons.delete,
++       color: Colors.white,
++     ),
++   );
++ }
+
+```
+
+Now we have a nice red background when the item is being dismissed.
+
+However, we still did not implement the remove method when the item is dismissed. This will happen inside `onDismissed`.
+
+When we remove an item we will need to udate the UI, as we can not call `setState()` inside `TodoList`, we will put our `_removeTodo()` method inside our screen and just get an instance of the method in the constructor of `TodoList`.
+
+📄 lib/todo_list.dart
+
+```diff
++ typedef RemoveTodoCallback = void Function(List<Todo>, int);
+
+  class TodoList extends StatelessWidget {
+-   TodoList({@required this.todos, this.onTodoToggle});
++   TodoList({@required this.todos, this.onTodoToggle, this.onRemoveTodo});
+
+    final List<Todo> todos;
+    final ToggleTodoCallback onTodoToggle;
++   final RemoveTodoCallback onRemoveTodo;
+
+  Widget _buildItem(BuildContext context, int index) {
+    final todo = todos[index];
+
+    return Dismissible(
+      key: Key(UniqueKey().toString()),
+      background: _buildDismissibleBackground(),
+      direction: DismissDirection.endToStart,
+      onDismissed: (direction) {
++       onRemoveTodo(todos, index);
+      },
+
+
+```
+
+Finally, we implement our `_removeTodo()` method in our screen.
+
+📄 lib/todo_list_screen.dart
+
+```diff
++ _removeTodo(List<Todo> todos, int index) {
++   setState(() {
++     todos.removeAt(index);
++   });
++ }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Todo List')),
+      body: TodoList(
+        todos: todos,
+        onTodoToggle: _toggleTodo,
++       onRemoveTodo: _removeTodo,
+      ),
+
+```
+
 
 See you in next tutorials! 👋
 
