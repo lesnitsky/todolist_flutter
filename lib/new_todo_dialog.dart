@@ -6,9 +6,11 @@ class NewTodoDialog extends StatelessWidget {
   final controller = new TextEditingController();
 
   void _submitTodo(BuildContext context, String title) {
-    final todo = new Todo(title: title);
-    controller.clear();
-    Navigator.of(context).pop(todo);
+    if (title.isNotEmpty) {
+      final todo = new Todo(title: title);
+      controller.clear();
+      Navigator.of(context).pop(todo);
+    }
   }
 
   @override
