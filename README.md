@@ -1206,6 +1206,77 @@ In case it is finished it will add a line through the text, otherwise, it will r
 
 ```
 
+Another cool thing we could have is the ability to add a new todo by simply tapping the return key when you are done writing, instead of moving your finger to the add button.
+
+This is easy, we just need to submit the todo when the text is submitted from `TextField`.
+
+📄 lib/new_todo_dialog.dart
+
+```diff
+ 
++ _submitTodo() {}
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text('New todo'),
+      content: TextField(
+        controller: controller,
+        autofocus: true,
++       onSubmitted: (value) {
++         _submitTodo();
++       },
+      ),
+
+```
+
+When we tap the Add button we also submit a new todo, then we just need to take the code from `onPressed` in Add button and
+paste into our `_submitTodo()` method.
+
+📄 lib/new_todo_dialog.dart
+
+```diff
+ 
+- _submitTodo() {}
++ void _submitTodo(BuildContext context, String title) {
++   final todo = new Todo(title: title);
++   controller.clear();
++   Navigator.of(context).pop(todo);
++ }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Text('New todo'),
+      content: TextField(
+        controller: controller,
+        autofocus: true,
+        onSubmitted: (value) {
+-         _submitTodo();
++         _submitTodo(context, value);
+        },
+      ),
+      actions: <Widget>[
+        FlatButton(
+          child: Text('Cancel'),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+        FlatButton(
+          child: Text('Add'),
+          onPressed: () {
+-            final todo = new Todo(title: title);
+-            controller.clear();
+-            Navigator.of(context).pop(todo);
++           _submitTodo(context, controller.value.text);
+          },
+        ),
+      ],
+    );
+  }
+```
+
 
 See you in next tutorials! 👋
 
