@@ -5,6 +5,14 @@ import 'package:todo_list/todo.dart';
 class NewTodoDialog extends StatelessWidget {
   final controller = new TextEditingController();
 
+  void _submitTodo(BuildContext context, String title) {
+    if (title.isNotEmpty) {
+      final todo = new Todo(title: title);
+      controller.clear();
+      Navigator.of(context).pop(todo);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
@@ -12,6 +20,9 @@ class NewTodoDialog extends StatelessWidget {
       content: TextField(
         controller: controller,
         autofocus: true,
+        onSubmitted: (value) {
+          _submitTodo(context, value);
+        },
       ),
       actions: <Widget>[
         FlatButton(
@@ -23,10 +34,7 @@ class NewTodoDialog extends StatelessWidget {
         FlatButton(
           child: Text('Add'),
           onPressed: () {
-            final todo = new Todo(title: controller.value.text);
-            controller.clear();
-
-            Navigator.of(context).pop(todo);
+            _submitTodo(context, controller.value.text);
           },
         ),
       ],

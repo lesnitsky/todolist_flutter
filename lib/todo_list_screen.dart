@@ -33,6 +33,12 @@ class _TodoListScreenState extends State<TodoListScreen> {
     }
   }
 
+  _removeTodo(List<Todo> todos, int index) {
+    setState(() {
+      todos.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +46,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
       body: TodoList(
         todos: todos,
         onTodoToggle: _toggleTodo,
+        onRemoveTodo: _removeTodo,
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
