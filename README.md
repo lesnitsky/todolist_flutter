@@ -6,6 +6,7 @@
 
 > Built with [Git Tutor](https://github.com/lesnitsky/git-tutor)
 
+[![lesnitsky.dev](https://lesnitsky.dev/icons/shield.svg?hash=42)](https://lesnitsky.dev?utm_source=todolist_flutter)
 [![GitHub stars](https://img.shields.io/github/stars/lesnitsky/todolist_flutter.svg?style=social)](https://github.com/lesnitsky/todolist_flutter)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lesnitsky_a.svg?label=Follow%20me&style=social)](https://twitter.com/lesnitsky_a)
 
@@ -1163,5 +1164,6 @@ See you in next tutorials! 👋
 > Built with [Git Tutor](https://github.com/lesnitsky/git-tutor)
 
 
+[![lesnitsky.dev](https://lesnitsky.dev/icons/shield.svg?hash=42)](https://lesnitsky.dev?utm_source=todolist_flutter)
 [![GitHub stars](https://img.shields.io/github/stars/lesnitsky/todolist_flutter.svg?style=social)](https://github.com/lesnitsky/todolist_flutter)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lesnitsky_a.svg?label=Follow%20me&style=social)](https://twitter.com/lesnitsky_a)
