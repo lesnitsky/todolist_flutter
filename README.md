@@ -91,7 +91,7 @@ Every widget should override `build` function. It returns a hierarchy of your la
 
 ```
 
-But in case of top-level App widget, it should return either `CupertinoApp` from `'package:flutter/material.dart'`, or `MaterialApp` from `'package:flutter/material.dart'`
+But in case of top-level App widget, it should return either `CupertinoApp` from `'package:flutter/cupertino.dart'`, or `MaterialApp` from `'package:flutter/material.dart'`
 
 We'll use `material` in this tutorial
 
