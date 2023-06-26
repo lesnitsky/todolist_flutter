@@ -6,8 +6,8 @@
 
 > Built with [Git Tutor](https://github.com/lesnitsky/git-tutor)
 
-[<img src="https://img.shields.io/twitter/follow/lesnitsky_dev.svg?label=Follow%20me&style=social" height="30px" />](https://twitter.com/lesnitsky_dev)
-[<img src="https://badges-897b.globeapp.dev/github?owner=lesnitsky&repository=todolist_flutter" height="30px" />](https://github.com/lesnitsky/todolist_flutter)
+[<img src="https://badges.globeapp.dev/twitter" height="40px" />](https://twitter.com/lesnitsky_dev)
+[<img src="https://badges.globeapp.dev/github?owner=lesnitsky&repository=todolist_flutter" height="40px" />](https://github.com/lesnitsky/todolist_flutter)
 
 This tutorial will walk you through the process of building of a simple todo-list with Flutter
 
@@ -1163,5 +1163,5 @@ See you in next tutorials! 👋
 > Built with [Git Tutor](https://github.com/lesnitsky/git-tutor)
 
 
-[<img src="https://img.shields.io/twitter/follow/lesnitsky_dev.svg?label=Follow%20me&style=social" height="30px" />](https://twitter.com/lesnitsky_dev)
-[<img src="https://badges-897b.globeapp.dev/github?owner=lesnitsky&repository=todolist_flutter" height="30px" />](https://github.com/lesnitsky/todolist_flutter)
+[<img src="https://badges.globeapp.dev/twitter" height="40px" />](https://twitter.com/lesnitsky_dev)
+[<img src="https://badges.globeapp.dev/github?owner=lesnitsky&repository=todolist_flutter" height="40px" />](https://github.com/lesnitsky/todolist_flutter)
